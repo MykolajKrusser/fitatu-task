@@ -10,20 +10,25 @@
                 <th>Phone</th>
                 <th>Email</th>
             </tr>
-            <tr v-for="employee in employees" class="employees-list__list-row">
+            <tr v-for="employee in employees" v-bind:key="employee.id" class="employees-list__list-row">
                 <td>{{employee.id}}</td>
                 <td>{{employee.name}}</td>
                 <td>{{employee.address.street}} {{employee.address.suite}} {{employee.address.city}}</td>
                 <td>{{employee.phone}}</td>
                 <td><a :href="`mailto:${ employee.email }`">{{employee.email}}</a></td>
+                <EditButton />
             </tr>
         </table>
     </div>
 </template>
 <script>
     import axios from 'axios';
+    import EditButton from '../components/EditButton';
 
     export default {
+        components: {
+            EditButton
+        },
         data() {
             return {
                 loading: false,
