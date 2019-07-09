@@ -4,11 +4,19 @@
   </button>
 </template>
 <script>
+  import axios from 'axios';
+
   export default {
     props: ['employeeData'],
     methods: {
       onEdit(){
-        console.log(this.employeeData)
+        axios.post('https://jsonplaceholder.typicode.com/posts', this.employeeData)
+          .then(response => {
+              console.log(response);
+          })
+          .catch(err => {
+            console.log(err)
+          })
       }
     }
   };
