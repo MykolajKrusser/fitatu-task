@@ -1,6 +1,6 @@
 <template>
   <button class="edit-button" @click="onEdit">
-    Edit
+    Save
   </button>
 </template>
 <script>
@@ -17,7 +17,6 @@
 </script>
 <style lang="scss" scoped>
   .edit-button{
-    background: #999d9d;
-    color: black;
+   
   }
 </style>
