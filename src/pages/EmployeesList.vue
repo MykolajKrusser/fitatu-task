@@ -30,11 +30,11 @@
                 
                 <td v-if="!editMode"><a :href="`mailto:${ employee.email }`">{{employee.email}}</a></td>
                 <td v-if="editMode"><input  v-model="employee.email"/></td>
-                
+
                 <td>
                     <button v-if="!editMode" v-on:click="editModeHandler">Edit</button> 
                     <button v-if="editMode" v-on:click="editModeHandler">Back</button> 
-                    <EditButton v-if="editMode"/> 
+                    <EditButton :employeeData="employee" v-if="editMode"/> 
                 </td>
             </tr>
         </table>

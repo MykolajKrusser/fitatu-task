@@ -4,16 +4,14 @@
   </button>
 </template>
 <script>
-    export default {
-        props: {
-            onEdit: {
-                type: Function,
-                default: () => {
-                  console.log('edited!')
-                },
-            },
-        }
-    };
+  export default {
+    props: ['employeeData'],
+    methods: {
+      onEdit(){
+        console.log(this.employeeData)
+      }
+    }
+  };
 </script>
 <style lang="scss" scoped>
   .edit-button{
