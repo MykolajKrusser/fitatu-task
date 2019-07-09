@@ -1,6 +1,6 @@
 <template>
   <button class="edit-button" @click="onEdit">
-      Edit
+    Edit
   </button>
 </template>
 <script>
@@ -8,12 +8,11 @@
         props: {
             onEdit: {
                 type: Function,
-                default: () => {console.log('edited!')},
+                default: () => {
+                  console.log('edited!')
+                },
             },
-        },
-        components: {
-            
-        },
+        }
     };
 </script>
 <style lang="scss" scoped>

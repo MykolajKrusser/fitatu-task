@@ -9,14 +9,16 @@
                 <th>Address</th>
                 <th>Phone</th>
                 <th>Email</th>
+                <th>Edit</th>
             </tr>
             <tr v-for="employee in employees" v-bind:key="employee.id" class="employees-list__list-row">
-                <td>{{employee.id}}</td>
-                <td>{{employee.name}}</td>
-                <td>{{employee.address.street}} {{employee.address.suite}} {{employee.address.city}}</td>
-                <td>{{employee.phone}}</td>
-                <td><a :href="`mailto:${ employee.email }`">{{employee.email}}</a></td>
-                <EditButton />
+                <td v-if="!editMode">{{employee.id}}</td> <td v-if="editMode"><input  v-model="employee.id"/></td>
+                <td v-if="!editMode">{{employee.name}}</td> <td v-if="editMode"><input  v-model="employee.name"/></td>
+                <td v-if="!editMode">{{employee.address.street}} {{employee.address.suite}} {{employee.address.city}}</td>
+                <td v-if="editMode"><input  v-model="employee.address.street"/> <input  v-model="employee.address.suite"/> <input  v-model="employee.address.city"/></td>
+                <td v-if="!editMode">{{employee.phone}}</td> <td v-if="editMode"><input  v-model="employee.phone"/></td>
+                <td v-if="!editMode"><a :href="`mailto:${ employee.email }`">{{employee.email}}</a></td>
+                <td><button v-on:click="editModeHandler">Edit</button></td>
             </tr>
         </table>
     </div>
@@ -33,6 +35,7 @@
             return {
                 loading: false,
                 employees: [],
+                editMode: false
             }
         },
         created () {
@@ -52,6 +55,9 @@
                     .finally(() => {
                         this.loading = false;
                     })
+            },
+            editModeHandler (){
+                !this.editMode ? this.editMode = true : this.editMode = false;
             }
         }
     };
