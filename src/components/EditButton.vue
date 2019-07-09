@@ -7,12 +7,15 @@
   import axios from 'axios';
 
   export default {
-    props: ['employeeData'],
+    props: {
+      employeeData: Object
+    },
     methods: {
       onEdit(){
         axios.post('https://jsonplaceholder.typicode.com/posts', this.employeeData)
           .then(response => {
               console.log(response);
+              this.$emit('cancelEditMod')
           })
           .catch(err => {
             console.log(err)

@@ -34,7 +34,7 @@
                 <td>
                     <button v-if="!editMode" v-on:click="editModeHandler">Edit</button> 
                     <button v-if="editMode" v-on:click="editModeHandler">Back</button> 
-                    <EditButton :employeeData="employee" v-if="editMode"/> 
+                    <EditButton :employeeData="employee" v-if="editMode" @cancelEditMod="editModeHandler"/> 
                 </td>
             </tr>
         </table>
