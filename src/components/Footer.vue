@@ -14,6 +14,7 @@
         padding: 15px 50px;
         background-color: #f7f8f9;
         z-index: 3;
+        
 
         &__fitatu-info {
             font-size: 12px;
