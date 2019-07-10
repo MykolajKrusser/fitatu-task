@@ -50,12 +50,13 @@
 <style lang="scss" scoped>
     .page-header {
         height: 60px;
-        
+        width: 100vw;
+
         &__content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 75px;
+            padding: 0 25px;
             position: fixed;
             z-index: 11;
             height: inherit;
@@ -76,7 +77,7 @@
                 color: black;
                 text-decoration: none;
                 margin: 10px;
-                border: 1px solid white;
+                border: 1px solid transparent;
                 padding: 2px;
                 transition: all 0.3s ease;
                 &:hover {
@@ -148,7 +149,7 @@
                 position: fixed;
                 top: 0;
                 left: 0;
-                min-width: 50%;
+                min-width: 70%;
                 height: 100vh;
                 display: flex;
                 flex-wrap: wrap;
@@ -160,6 +161,11 @@
                 background: rgba(148, 148, 148, 0.932);
                 box-shadow: inset 0px 0px 40px 7px rgba(255, 255, 255, 0.41);
                 z-index: 888;
+                
+                a {
+                    color: white;
+                    font-size: 22px;
+                }
             }
 
             .navigationOpen{

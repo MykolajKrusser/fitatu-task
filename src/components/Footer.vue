@@ -6,7 +6,7 @@
 <style lang="scss" scoped>
     .page-footer {
         height: 70px;
-        width: 100%;
+        width: 100vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -14,8 +14,6 @@
         padding: 15px 50px;
         background-color: #f7f8f9;
         z-index: 3;
-        position: absolute;
-        bottom: 0;
 
         &__fitatu-info {
             font-size: 12px;
