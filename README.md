@@ -6,11 +6,14 @@ Wybierz 3 dowolne zadania i je zrealizuj.
 1. npm install
 1. npm run web
 
+### Dostęp w przeglądarce:
+1. http://localhost:9000
+
 ### Zadania:
-1. Dodaj komponent przycisku edycji każdego elementu listy i dodaj jako kolejną kolumnę do listy.
-1. Dodaj edycję elementu listy z zapisem do API (edycja tylko danych, które są na liście). Edycja może być wykonywana od razu na wierszu listy lub na nowym widoku z formularzem.
-1. Dostosuj widoki pod RWD.
-1. Dodaj menu (możesz wymyślić dodatkowe elementy, które nigdzie nie prowadzą), które na telefonach zamienia się w hamburger menu.
+1. Dodaj komponent przycisku edycji każdego elementu listy i dodaj jako kolejną kolumnę do listy. -DONE
+1. Dodaj edycję elementu listy z zapisem do API (edycja tylko danych, które są na liście). Edycja może być wykonywana od razu na wierszu listy lub na nowym widoku z formularzem. - DONE
+1. Dostosuj widoki pod RWD. - DONE
+1. Dodaj menu (możesz wymyślić dodatkowe elementy, które nigdzie nie prowadzą), które na telefonach zamienia się w hamburger menu. - DONE
 1. Skonfiguruj środowisko do testów jednostkowych i napisz testy do widoku listy.
 
 ### Uwagi:
