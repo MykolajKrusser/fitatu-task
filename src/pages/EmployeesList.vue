@@ -52,7 +52,6 @@
             return {
                 loading: false,
                 employees: [],
-                editMode: false,
                 selectedId: true
             }
         },
