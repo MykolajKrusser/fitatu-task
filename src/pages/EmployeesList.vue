@@ -92,16 +92,19 @@
     padding:0;
     border-collapse: collapse;
     border-spacing: 0;
+    text-align: left;
   }
 
   table tr {
     border: 1px solid #ddd;
     padding: 5px;
+    text-align: left;
   }
 
   table th, table td {
     padding: 10px;
     text-align: center;
+    text-align: left;
   }
 
   table th {
@@ -114,6 +117,7 @@
 
     table {
       border: 0;
+      text-align: left;
     }
 
     table thead {

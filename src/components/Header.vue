@@ -73,6 +73,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            
             a {
                 color: black;
                 text-decoration: none;
@@ -87,7 +88,7 @@
             }
         }
         /*
-            hamburger menu buttom
+            hamburger menu button
         */
         #menuToggle {
             overflow: hidden;
