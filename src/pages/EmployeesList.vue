@@ -12,29 +12,29 @@
                 <th>Edit</th>
             </tr>
             <tr v-for="employee in employees" v-bind:key="employee.id" class="employees-list__list-row">
-                <td v-if="!editMode">{{employee.id}}</td>
-                <td v-if="editMode"><input  v-model="employee.id"/></td>
+                <td v-if="selectedId !== employee.id">{{employee.id}}</td>
+                <td v-if="selectedId === employee.id"><input  v-model="employee.id"/></td>
 
-                <td v-if="!editMode">{{employee.name}}</td> 
-                <td v-if="editMode"><input  v-model="employee.name"/></td>
+                <td v-if="selectedId !== employee.id">{{employee.name}}</td> 
+                <td v-if="selectedId === employee.id"><input  v-model="employee.name"/></td>
 
-                <td v-if="!editMode">{{employee.address.street}} {{employee.address.suite}} {{employee.address.city}}</td>
-                <td v-if="editMode">
+                <td v-if="selectedId !== employee.id">{{employee.address.street}} {{employee.address.suite}} {{employee.address.city}}</td>
+                <td v-if="selectedId === employee.id">
                     <input  v-model="employee.address.street"/> 
                     <input  v-model="employee.address.suite"/> 
                     <input  v-model="employee.address.city"/>
                 </td>
 
-                <td v-if="!editMode">{{employee.phone}}</td>
-                <td v-if="editMode"><input  v-model="employee.phone"/></td>
+                <td v-if="selectedId !== employee.id">{{employee.phone}}</td>
+                <td v-if="selectedId === employee.id"><input  v-model="employee.phone"/></td>
                 
-                <td v-if="!editMode"><a :href="`mailto:${ employee.email }`">{{employee.email}}</a></td>
-                <td v-if="editMode"><input  v-model="employee.email"/></td>
+                <td v-if="selectedId !== employee.id"><a :href="`mailto:${ employee.email }`">{{employee.email}}</a></td>
+                <td v-if="selectedId === employee.id"><input  v-model="employee.email"/></td>
 
                 <td>
-                    <button v-if="!editMode" v-on:click="editModeHandler">Edit</button> 
-                    <button v-if="editMode" v-on:click="editModeHandler">Back</button> 
-                    <EditButton :employeeData="employee" v-if="editMode" @cancelEditMod="editModeHandler"/> 
+                    <button v-if="selectedId !== employee.id" v-on:click="editModeHandler(employee.id)">Edit</button> 
+                    <button v-if="selectedId === employee.id" v-on:click="editModeHandler">Back</button> 
+                    <EditButton :employeeData="employee" v-if="selectedId === employee.id" @cancelEditMod="editModeHandler"/> 
                 </td>
             </tr>
         </table>
@@ -52,7 +52,8 @@
             return {
                 loading: false,
                 employees: [],
-                editMode: false
+                editMode: false,
+                selectedId: true
             }
         },
         created () {
@@ -73,8 +74,8 @@
                         this.loading = false;
                     })
             },
-            editModeHandler (){
-                !this.editMode ? this.editMode = true : this.editMode = false;
+            editModeHandler (id){
+                this.selectedId = id
             }
         }
     };
